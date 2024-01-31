@@ -10,8 +10,61 @@
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <h1 class=" text-center">
+                Cocktail list
+            </h1>
+        </div>
+    </header>
     <main>
+        <div class="d-flex container">
+            <div class="row">
+                <ul>
+                    @foreach ($cocktails as $cocktail)
+                        <li>
+                            <h2>
+                                {{$cocktail["name"]}}
+                            </h2>
+                            <p>
+                                Main Alcohol: 
+                                {{$cocktail["main_alcohol"]}}
+                            </p>
+                            <p>
+                               Ingredients: 
+                                {{$cocktail["ingredients"]}}
+                            </p>
+                            <p>
+                                Preparation: 
+                                 {{$cocktail["preparations"]}}
+                             </p>
+                             <p>
+                                Glass Type: 
+                                 {{$cocktail["glass_type"]}}
+                             </p>
+                             <p>
+                                Serving Temperature:   
+                                 {{$cocktail["serving_temperature"]}}
+                             </p>
+                             <p>
+                            Garnish: 
+                                 {{$cocktail["garnish"]}}
+                             </p>
+                             <p>
+                               price: 
+                                 {{$cocktail["price"]}}€
+                             </p>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="row">
+
+            </div>
+
+        </div>
     </main>
+
 </body>
 
 </html>

@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <main>
+        ciao
+    </main>
 </body>
 
 </html>

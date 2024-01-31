@@ -16,17 +16,36 @@ class CocktailsTableSeeder extends Seeder
     {
         for($i = 0; $i < 20; $i++){
             $newCocktail = new Cocktail();
+            /*
             $newCocktail->name = $faker->word();
             $newCocktail->main_alcohol = $faker->randomElement(['tequila', 'vodka', 'rum', 'gin', 'absinthe', 'whiskey' ,'brandy']);
             $newCocktail->ingredients = $faker->words(5);
             $newCocktail->preparations = $faker->text(30);
             $newCocktail->glass_type = $faker->word();
-            $newCocktail->price = $faker->randomFloat();
+            $newCocktail->price = $faker->randomFloat(1, 5, 20);
             $newCocktail->garnish = $faker->word();
             $newCocktail->iba_status = $faker->sentence(4);
             $newCocktail->origin = $faker->word();
             $newCocktail->serving_temperature = $faker->word();
             $newCocktail->alcohol_content = $faker->word();
+            $newCocktail->flavour_profile = $faker->word();
+            $newCocktail->type = $faker->word();
+            $newCocktail->creation_date = $faker->word();
+            $newCocktail->creator = $faker->name();
+            $newCocktail->history = $faker->word();
+            $newCocktail->nutritional_values = $faker->word();*/
+
+            $newCocktail->name = $faker->word();
+            $newCocktail->main_alcohol = $faker->randomElement(['tequila', 'vodka', 'rum', 'gin', 'absinthe', 'whiskey' ,'brandy']);
+            $newCocktail->ingredients = implode(', ', $faker->words(5));
+            $newCocktail->preparations = $faker->text(30);
+            $newCocktail->glass_type = $faker->word();
+            $newCocktail->price = $faker->randomFloat(2, 1, 300);
+            $newCocktail->garnish = $faker->word();
+            $newCocktail->iba_status = $faker->word(10);
+            $newCocktail->origin = $faker->word();
+            $newCocktail->serving_temperature = $faker->text(8);
+            $newCocktail->alcohol_content = $faker->randomFloat(2, 0, 1);
             $newCocktail->flavour_profile = $faker->word();
             $newCocktail->type = $faker->word();
             $newCocktail->creation_date = $faker->word();

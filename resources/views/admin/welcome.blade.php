@@ -38,6 +38,11 @@
                                 {{ $cocktail['price'] }}€
                             </p>
                             <a href="{{ route('cocktail.show', $cocktail) }}" class="btn btn-info btn-sm">Info</a>
+                            <form action="{{route("cocktail.destroy", $cocktail)}}" method="POST" style="display: inline">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-danger btn-sm">Delete Cocktail</button>
+                            </form>
                         </li>
                     @endforeach
                 </ul>

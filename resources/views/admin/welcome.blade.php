@@ -22,7 +22,7 @@
             <div class="row">
                 <ul>
                     @foreach ($cocktails as $cocktail)
-                        <li>
+                        <li class="pb-4">
                             <h2>
                                 {{ $cocktail['name'] }}
                             </h2>
@@ -31,29 +31,10 @@
                                 {{ $cocktail['main_alcohol'] }}
                             </p>
                             <p>
-                                Ingredients:
-                                {{ $cocktail['ingredients'] }}
-                            </p>
-                            <p>
-                                Preparation:
-                                {{ $cocktail['preparations'] }}
-                            </p>
-                            <p>
-                                Glass Type:
-                                {{ $cocktail['glass_type'] }}
-                            </p>
-                            <p>
-                                Serving Temperature:
-                                {{ $cocktail['serving_temperature'] }}
-                            </p>
-                            <p>
-                                Garnish:
-                                {{ $cocktail['garnish'] }}
-                            </p>
-                            <p>
                                 price:
                                 {{ $cocktail['price'] }}€
                             </p>
+                            <a href="{{ route('cocktail.show', $cocktail) }}" class="btn btn-primary btn-sm">Info</a>
                         </li>
                     @endforeach
                 </ul>

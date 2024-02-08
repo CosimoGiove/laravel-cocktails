@@ -9,6 +9,6 @@ class PageController extends Controller
 {
     public function index() {
         $cocktails = Cocktail::all();  
-        return view('welcome',compact("cocktails"));
+        return view('admin.welcome',compact("cocktails"));
     }
 }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCocktailRequest;
+use App\Http\Requests\UpdateCocktailRequest;
 use Illuminate\Http\Request;
 use App\Models\Cocktail;
+use Spatie\FlareClient\View;
 
 class CocktailsController extends Controller
 {
@@ -49,17 +51,19 @@ class CocktailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Cocktail $cocktail)
     {
-        //
+        return view('admin.edit', compact('cocktail'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCocktailRequest $request, Cocktail $cocktail)
     {
-        //
+        $data = $request->validated();
+        $cocktail->update($data);
+        return redirect()->route('cocktail.index');
     }
 
     /**

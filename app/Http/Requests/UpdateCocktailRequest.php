@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Ramsey\Uuid\Type\Decimal;
+use Illuminate\Validation\Rule;
 
-class StoreCocktailRequest extends FormRequest
+class UpdateCocktailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,7 @@ class StoreCocktailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" =>["required","string","max:48", "unique:cocktail,name"],
+            "name" =>["required","string","max:48", Rule::unique("cocktail", "name")->ignore($this->cocktail)],
             "main_alcohol"=>["required","string","max:48"],
             "ingredients" =>["string"],
             "preparations" =>["string"],

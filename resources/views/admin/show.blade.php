@@ -30,7 +30,7 @@
       {{ $cocktail['garnish'] }}
   </p>
   <p>
-      price:
+      Price:
       {{ $cocktail['price'] }}€
   </p>
 

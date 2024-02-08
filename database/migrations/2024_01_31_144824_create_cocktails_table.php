@@ -16,21 +16,21 @@ return new class extends Migration
 
             $table->string('name', 50);
             $table->string('main_alcohol', 50);
-            $table->text('ingredients');
-            $table->text('preparations');
-            $table->string('glass_type', 50);
-            $table->decimal('price', 6, 2);
-            $table->string('garnish', 50);
-            $table->string('iba_status', 50);
-            $table->string('origin', 50);
-            $table->string('serving_temperature', 10);
-            $table->decimal('alcohol_content', 3, 2);
-            $table->string('flavour_profile', 30);
-            $table->string('type', 50);
-            $table->string('creation_date', 50);
-            $table->string('creator', 50);
-            $table->text('history');
-            $table->text('nutritional_values');
+            $table->text('ingredients')->nullable();
+            $table->text('preparations')->nullable();
+            $table->string('glass_type', 50)->nullable();
+            $table->decimal('price', 6, 2)->nullable();
+            $table->string('garnish', 50)->nullable();
+            $table->string('iba_status', 50)->nullable();
+            $table->string('origin', 50)->nullable();
+            $table->string('serving_temperature', 10)->nullable();
+            $table->decimal('alcohol_content', 3, 2)->nullable();
+            $table->string('flavour_profile', 30)->nullable();
+            $table->string('type', 50)->nullable();
+            $table->string('creation_date', 50)->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->text('history')->nullable();
+            $table->text('nutritional_values')->nullable();
 
 
 

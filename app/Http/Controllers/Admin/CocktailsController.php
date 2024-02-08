@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCocktailRequest;
 use Illuminate\Http\Request;
 use App\Models\Cocktail;
 
@@ -28,9 +29,13 @@ class CocktailsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCocktailRequest $request)
     {
-        //
+        $data = $request->validated();
+        $cocktail = new Cocktail();
+        $cocktail->fill($data);
+        $cocktail->save();
+        return redirect()->route("cocktail.index");
     }
 
     /**

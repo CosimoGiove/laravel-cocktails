@@ -18,7 +18,7 @@
         </div>
     </header>
     <main>
-        <div class="container d-flex">
+        <div class="container">
             <a class="btn btn-primary" href="{{ route('cocktail.create') }}">
                 Add new cocktail
             </a>
@@ -37,7 +37,7 @@
                                 price:
                                 {{ $cocktail['price'] }}€
                             </p>
-                            <a href="{{ route('cocktail.show', $cocktail) }}" class="btn btn-primary btn-sm">Info</a>
+                            <a href="{{ route('cocktail.show', $cocktail) }}" class="btn btn-info btn-sm">Info</a>
                         </li>
                     @endforeach
                 </ul>

@@ -19,6 +19,9 @@
     </header>
     <main>
         <div class="container d-flex">
+            <a class="btn btn-primary" href="{{ route('cocktail.create') }}">
+                Add new cocktail
+            </a>
             <div class="row">
                 <ul>
                     @foreach ($cocktails as $cocktail)

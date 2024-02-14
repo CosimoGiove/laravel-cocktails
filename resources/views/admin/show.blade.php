@@ -11,7 +11,6 @@
   </p>
   <p>
       Ingredients:
-      {{ $cocktail['ingredients'] }}
   </p>
   <p>
       Preparation:

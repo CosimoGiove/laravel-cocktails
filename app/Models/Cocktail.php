@@ -24,4 +24,7 @@ class Cocktail extends Model
     "serving_temperature", 
     "garnish",
     "price",];
+    public function ingredients(){
+        return $this->belongsToMany(Ingredient::class);
+    }
 }

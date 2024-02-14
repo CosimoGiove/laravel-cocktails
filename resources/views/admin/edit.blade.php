@@ -13,11 +13,14 @@
         <label for="main_alcohol" class="form-label">Main alcohol:</label>
         <input type="text" class="form-control" id="main_alcohol" name="main_alcohol" value="{{old("main_alcohol", $cocktail->main_alcohol)}}">
       </div>
-      {{-- <div class="mb-3">
-        <label for="ingredients" class="form-label">Ingredients:</label>
-        <input type="text" class="form-control" id="ingredients" name="ingredients" value="{{old("ingredients", $cocktail->ingredients)}}">
-      </div> --}}
-
+      @foreach ($ingredients as $ingredient)
+                <div class="form-check form-check-inline">
+                    <input name="ingredients[]" class="form-check-input" id="ingredient-{{ $ingredient->id }}"
+                        type="checkbox" value="{{ $ingredient->id }}"
+                        {{ in_array($ingredient->id, old('ingredients', [])) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="ingredient-{{ $ingredient->id }}">{{ $ingredient->name }}</label>
+                </div>
+      @endforeach
       <div class="mb-3">
         <label for="preparations" class="form-label">Preparation:</label>
         <input type="text" class="form-control" id="name" name="preparations" value="{{old("preparations", $cocktail->preparations)}}">

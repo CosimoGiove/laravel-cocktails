@@ -11,7 +11,13 @@
   </p>
   <p>
       Ingredients:
-      {{-- {{ $ingredient[''] }} --}}
+      <ul>
+        @foreach ($cocktail->ingredients as $ingredient)
+            <li>
+                {{$ingredient->name}}
+            </li>
+        @endforeach
+      </ul>
   </p>
   <p>
       Preparation:

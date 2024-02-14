@@ -36,16 +36,14 @@ class CocktailsController extends Controller
      */
     public function store(StoreCocktailRequest $request)
     {
-        //$data = $request->validated();
-        $data = $request->all();
+        $data = $request->validated();
         $cocktail = new Cocktail();
         $cocktail->fill($data);
-        //dd($cocktail);
         $cocktail->save();
 
-        /*if (isset($data['ingredients'])) {
+        if (isset($data['ingredients'])) {
             $cocktail->ingredients()->sync($data['ingredients']);
-        }*/
+        }
 
         return redirect()->route("cocktail.index");
     }
@@ -64,7 +62,8 @@ class CocktailsController extends Controller
      */
     public function edit(Cocktail $cocktail)
     {
-        return view('admin.edit', compact('cocktail'));
+        $ingredients = Ingredient::all();
+        return view('admin.edit', compact('cocktail', 'ingredients'));
     }
 
     /**

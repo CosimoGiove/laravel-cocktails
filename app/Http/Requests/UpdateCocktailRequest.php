@@ -25,7 +25,7 @@ class UpdateCocktailRequest extends FormRequest
         return [
             "name" =>["required","string","max:48", Rule::unique("cocktail", "name")->ignore($this->cocktail)],
             "main_alcohol"=>["required","string","max:48"],
-            "ingredients" =>["string"],
+            'ingredients' => ['nullable', 'exists:ingredients,id'],
             "preparations" =>["string"],
             "glass_type" =>["string"],
             "serving_temperature" =>["string","max:9"],

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCocktailRequest;
 use App\Http\Requests\UpdateCocktailRequest;
 use Illuminate\Http\Request;
 use App\Models\Cocktail;
+use App\Models\Ingredient;
 use Spatie\FlareClient\View;
 
 class CocktailsController extends Controller
@@ -25,7 +26,9 @@ class CocktailsController extends Controller
      */
     public function create()
     {
-        return view("admin.create");
+        $ingredients = Ingredient::all();
+
+        return view("admin.create", compact('ingredients'));
     }
 
     /**
@@ -37,6 +40,11 @@ class CocktailsController extends Controller
         $cocktail = new Cocktail();
         $cocktail->fill($data);
         $cocktail->save();
+
+        if (isset($data['ingredients'])) {
+            $cocktail->ingredients()->sync($data['ingredients']);
+        }
+
         return redirect()->route("cocktail.index");
     }
 
@@ -45,7 +53,8 @@ class CocktailsController extends Controller
      */
     public function show(Cocktail $cocktail)
     {
-        return view('admin.show', compact('cocktail'));
+        $ingredients = Ingredient::all();
+        return view('admin.show', compact('cocktail', 'ingredients'));
     }
 
     /**

@@ -11,6 +11,7 @@
   </p>
   <p>
       Ingredients:
+      {{-- {{ $ingredient[''] }} --}}
   </p>
   <p>
       Preparation:

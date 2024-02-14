@@ -23,14 +23,14 @@ class StoreCocktailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" =>["required","string","max:48", "unique:cocktail,name"],
+            "name" =>["required","string","max:48", "unique:cocktails,name"],
             "main_alcohol"=>["required","string","max:48"],
-            "ingredients" =>["string"],
-            "preparations" =>["string"],
-            "glass_type" =>["string"],
-            "serving_temperature" =>["string","max:9"],
-            "garnish" =>["string","max:48"],
-            "price" =>["decimal:0,2"]
+            'ingredients' => ['nullable', 'exists:ingredients,id'],
+            "preparations" =>['string'],
+            "glass_type" =>['nullable', 'string'],
+            "serving_temperature" =>['nullable', 'string','max:9'],
+            "garnish" =>['nullable', 'string','max:48'],
+            "price" =>['nullable', 'decimal:0,2']
         ];
     }
 }

@@ -14,7 +14,8 @@ class IngredientController extends Controller
      */
     public function index()
     {
-        //
+        $ingredients = Ingredient::all();
+        return view('admin.ingredients.index', compact('ingredients'));
     }
 
     /**
@@ -62,6 +63,8 @@ class IngredientController extends Controller
      */
     public function destroy(Ingredient $ingredient)
     {
-        //
+        $ingredient->cocktails()->detach();
+        $ingredient->delete();
+        return to_route('ingredient.index');
     }
 }

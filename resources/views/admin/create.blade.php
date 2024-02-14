@@ -13,10 +13,6 @@
                 <input type="text" class="form-control" id="main_alcohol" name="main_alcohol"
                     value="{{ old('main_alcohol') }}">
             </div>
-            {{-- <div class="mb-3">
-        <label for="ingredients" class="form-label">Ingredients:</label>
-        <input type="text" class="form-control" id="ingredients" name="ingredients" value="{{old("ingredients")}}">
-      </div> --}}
             <p>Ingredients:</p>
             @foreach ($ingredients as $ingredient)
                 <div class="form-check form-check-inline">

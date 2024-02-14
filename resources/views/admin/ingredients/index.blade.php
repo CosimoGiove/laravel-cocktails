@@ -13,15 +13,15 @@
     <header>
         <div class="container">
             <h1 class=" text-center">
-                Cocktail list
+                ingredients list
             </h1>
         </div>
     </header>
     <main>
         <div class="container">
-            <a class="btn btn-success" href="{{ route('cocktail.create') }}">
-                Add new cocktail
-            </a>
+            {{-- <a class="btn btn-success" href="{{ route('ingredient.create') }}">
+                Add new ingredients
+            </a> --}}
             <table class="table">
                 <thead>
                     <tr>
@@ -33,21 +33,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($cocktails as $cocktail)
+                    @foreach ($ingredients as $ingredient)
                         <tr>
-                            <th scope="row">{{ $cocktail['id'] }}</th>
-                            <td>{{ $cocktail['name'] }}</td>
-                            <td>{{ $cocktail['price'] }}</td>
-                            <td>{{ $cocktail['type'] }}</td>
+                            <th scope="row">{{ $ingredient['id'] }}</th>
+                            <td>{{ $ingredient['name'] }}</td>
+                            <td>{{ $ingredient['type'] }}</td>
                             <td>
                                 <div>
-                                    <a href="{{ route('cocktail.show', $cocktail) }}" class="btn btn-info btn-sm">Info</a>
-                                    <form action="{{route("cocktail.destroy", $cocktail)}}" method="POST" style="display: inline">
+                                    <form action="{{route("ingredient.destroy", $ingredient)}}" method="POST" style="display: inline">
                                         @csrf
                                         @method("DELETE")
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete Cocktail</button>
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete ingredients</button>
                                     </form>
-                                    <a href="{{ route('cocktail.edit', $cocktail) }}" class="btn btn-secondary btn-sm">Edit</a>
+                                    {{-- <a href="{{ route('ingredient.edit', $ingredients) }}" class="btn btn-secondary btn-sm">Edit</a> --}}
                                 </div> 
                             </td>
                         </tr>

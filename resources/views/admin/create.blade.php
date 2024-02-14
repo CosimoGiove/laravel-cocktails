@@ -19,7 +19,7 @@
       </div> --}}
             @foreach ($ingredients as $ingredient)
                 <div class="form-check form-check-inline">
-                    <input name="technologies[]" class="form-check-input" id="ingredient-{{ $ingredient->id }}"
+                    <input name="ingredients[]" class="form-check-input" id="ingredient-{{ $ingredient->id }}"
                         type="checkbox" value="{{ $ingredient->id }}"
                         {{ in_array($ingredient->id, old('ingredients', [])) ? 'checked' : '' }}>
                     <label class="form-check-label" for="ingredient-{{ $ingredient->id }}">{{ $ingredient->name }}</label>

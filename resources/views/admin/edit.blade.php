@@ -13,10 +13,10 @@
         <label for="main_alcohol" class="form-label">Main alcohol:</label>
         <input type="text" class="form-control" id="main_alcohol" name="main_alcohol" value="{{old("main_alcohol", $cocktail->main_alcohol)}}">
       </div>
-      <div class="mb-3">
+      {{-- <div class="mb-3">
         <label for="ingredients" class="form-label">Ingredients:</label>
         <input type="text" class="form-control" id="ingredients" name="ingredients" value="{{old("ingredients", $cocktail->ingredients)}}">
-      </div>
+      </div> --}}
 
       <div class="mb-3">
         <label for="preparations" class="form-label">Preparation:</label>

@@ -36,14 +36,16 @@ class CocktailsController extends Controller
      */
     public function store(StoreCocktailRequest $request)
     {
-        $data = $request->validated();
+        //$data = $request->validated();
+        $data = $request->all();
         $cocktail = new Cocktail();
         $cocktail->fill($data);
+        //dd($cocktail);
         $cocktail->save();
 
-        if (isset($data['ingredients'])) {
+        /*if (isset($data['ingredients'])) {
             $cocktail->ingredients()->sync($data['ingredients']);
-        }
+        }*/
 
         return redirect()->route("cocktail.index");
     }

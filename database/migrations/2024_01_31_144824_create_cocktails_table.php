@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name', 50);
             $table->string('main_alcohol', 50);
-            $table->text('ingredients')->nullable();
+            //$table->text('ingredients')->nullable();
             $table->text('preparations')->nullable();
             $table->string('glass_type', 50)->nullable();
             $table->decimal('price', 6, 2)->nullable();

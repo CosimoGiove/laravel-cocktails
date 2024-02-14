@@ -18,7 +18,7 @@ class CocktailsTableSeeder extends Seeder
             $newCocktail = new Cocktail();
             $newCocktail->name = $faker->word();
             $newCocktail->main_alcohol = $faker->randomElement(['tequila', 'vodka', 'rum', 'gin', 'absinthe', 'whiskey' ,'brandy']);
-            $newCocktail->ingredients = implode(', ', $faker->words(5));
+            //$newCocktail->ingredients = implode(', ', $faker->words(5));
             $newCocktail->preparations = $faker->text(30);
             $newCocktail->glass_type = $faker->word();
             $newCocktail->price = $faker->randomFloat(2, 1, 300);

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->string("name",100)->unique();
-            $table->string("type",100);
+            $table->string("type",100)->nullable();
             $table->timestamps();
         });
     }

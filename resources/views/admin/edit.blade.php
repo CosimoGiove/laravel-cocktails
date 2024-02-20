@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+  <div class="pt-3 text-center">
+    <a role="button" href="{{route("cocktail.index")}}" class="btn buttonbgindex "> Back to Cocktails List</a>
+</div>
 <form action="{{route("cocktail.update", $cocktail->id)}}" method="POST">
     @csrf
     @method("PUT")
@@ -45,7 +48,7 @@
         <label for="price" class="form-label">Price:</label>
         <input type="text" class="form-control" id="price" name="price" value="{{old("price", $cocktail->price)}}">
       </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn buttonbgindex">Submit</button>
   </form>
 </div>
 @endsection

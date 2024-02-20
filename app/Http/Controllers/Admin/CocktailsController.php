@@ -81,8 +81,9 @@ class CocktailsController extends Controller
      */
     public function destroy(Cocktail $cocktail)
     {
+        $cocktail_name = $cocktail->name;
         $cocktail->delete();
-        return redirect()->route("cocktail.index");
+        return redirect()->route("cocktail.index")->with('message', "Cocktail $cocktail_name deleted successfully!");
 
     }
 }

@@ -10,6 +10,42 @@ img{
     width: 100%;
 }
 
-.drink-img{
-    width: 300px;
+.cocktail-deatails-container{
+    width: 50%;
+}
+.cocktail-img-container:hover{
+    transform:scale(1.2);
+    transition: 0.4s ease-in-out;
+}
+.cocktail-img-container img{
+    filter: drop-shadow(5px 5px 5px #fff);
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+    h2{
+        color: #aaff00;
+    }
+    .buttonbg{
+        background-color: #aaff00;
+        animation: buttonmove 5s infinite linear ;
+    }
+    .buttonbg:hover{
+        background-color:#96e000;
+        
+    }
+    .bold{
+        font-weight: 700px;
+        color:#aaff00;
+    }
+}
+
+@keyframes buttonmove  {
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(5deg); box-shadow: 2px 2px 2px 2px #fff;}
+    40%{transform: rotate(0deg); box-shadow: 1px 1px 1px 1px #fff}
+    60%{transform: rotate(-5deg);box-shadow: 2px 2px 2px 2px #fff;}
+    100%{transform: rotate(0deg);}
+    
 }

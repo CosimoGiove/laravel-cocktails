@@ -21,6 +21,11 @@ img{
     filter: drop-shadow(5px 5px 5px #fff);
 }
 
+h1{
+    color:#aaff00;
+    font-weight: 700;
+}
+
 body{
     background-color: #333;
     color: #fff;
@@ -30,6 +35,9 @@ body{
     .buttonbg{
         background-color: #aaff00;
         animation: buttonmove 5s infinite linear ;
+    }
+    .buttonbgindex{
+        background-color: #aaff00;
     }
     .buttonbg:hover{
         background-color:#96e000;

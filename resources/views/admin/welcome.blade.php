@@ -9,7 +9,7 @@
     @vite('resources/js/app.js')
 </head>
 
-<body>
+<body class="py-4">
     <header>
         <div class="container">
             <h1 class=" text-center">
@@ -19,10 +19,23 @@
     </header>
     <main>
         <div class="container">
-            <a class="btn btn-success" href="{{ route('cocktail.create') }}">
+            @if (session('message'))
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">Notification</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ session('message') }}
+                    </div>
+                </div>
+            </div>
+        @endif
+            <a class="btn buttonbg" href="{{ route('cocktail.create') }}">
                 Add new cocktail
             </a>
-            <table class="table">
+            <table class="table mt-4 table-striped-rows table-dark">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
@@ -37,17 +50,17 @@
                         <tr>
                             <th scope="row">{{ $cocktail['id'] }}</th>
                             <td>{{ $cocktail['name'] }}</td>
-                            <td>{{ $cocktail['price'] }}</td>
+                            <td>{{ $cocktail['price'] }}€</td>
                             <td>{{ $cocktail['type'] }}</td>
                             <td>
                                 <div>
-                                    <a href="{{ route('cocktail.show', $cocktail) }}" class="btn btn-info btn-sm">Info</a>
+                                    <a href="{{ route('cocktail.show', $cocktail) }}" class="btn buttonbgindex btn-sm">Info</a>
                                     <form action="{{route("cocktail.destroy", $cocktail)}}" method="POST" style="display: inline">
                                         @csrf
                                         @method("DELETE")
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete Cocktail</button>
+                                        <button type="submit" class="btn buttonbgindex btn-sm">Delete Cocktail</button>
                                     </form>
-                                    <a href="{{ route('cocktail.edit', $cocktail) }}" class="btn btn-secondary btn-sm">Edit</a>
+                                    <a href="{{ route('cocktail.edit', $cocktail) }}" class="btn buttonbgindex btn-sm">Edit</a>
                                 </div> 
                             </td>
                         </tr>

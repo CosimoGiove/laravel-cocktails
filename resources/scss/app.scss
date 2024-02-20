@@ -10,6 +10,10 @@ img{
     width: 100%;
 }
 
+.toast-show, .toast-body{
+    background-color: #333;
+}
+
 .cocktail-deatails-container{
     width: 50%;
 }
@@ -40,6 +44,10 @@ body{
         background-color: #aaff00;
     }
     .buttonbg:hover{
+        background-color:#96e000;
+        
+    }
+    .buttonbgindex:hover{
         background-color:#96e000;
         
     }

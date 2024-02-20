@@ -42,7 +42,7 @@
                         <th scope="col">Name:</th>
                         <th scope="col">Price:</th>
                         <th scope="col">type:</th>
-                        <th scope="col">info</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
